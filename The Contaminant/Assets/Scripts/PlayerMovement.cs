@@ -6,11 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontalMove;
     public float runSpeed = 10f;
-    
 
     [SerializeField] private Rigidbody2D rigi;
-    
-    
+
 
     // Update is called once per frame
     void Update()
@@ -19,11 +17,20 @@ public class PlayerMovement : MonoBehaviour
 
         jump();
         crouch();
-
+        
+        wallJump();
+        if (!isWallJumping)
+        {
+            flip();
+        }
     }
     private void FixedUpdate()
     {
-        rigi.velocity = new Vector2(horizontalMove * runSpeed, rigi.velocity.y);
+        if (!isWallJumping)
+        {
+            rigi.velocity = new Vector2(horizontalMove * runSpeed, rigi.velocity.y);
+        }
+        wallSlide();
     }
 
 
@@ -34,8 +41,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        
-        
     }
 
     //Code for Jumping.
@@ -48,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded())
             {
+                jumping = true;
                 extraJump = 1;
             }
             if (Input.GetButtonDown("Jump") && isGrounded() && extraJump==1)
@@ -106,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
     private void crouch()
     {
         
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch")&& isGrounded())
         {
             if (crouchCounter)
             {
@@ -125,6 +131,116 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    
+    private float wallSlidingSpeed =2f;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
+
+    //Checking if the player touches the wall
+    private bool isWalled()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+        
+    }
+    //Code for Wallslide
+    private bool isWallSliding;
+    private void wallSlide()
+    {
+        if(isWalled())
+        {
+            isWallSliding = true;
+            rigi.velocity = new Vector2(rigi.velocity.x, Mathf.Clamp(rigi.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
+    //Code for Walljumping
+    private bool isWallJumping;
+    private float wallJumpingDirection;
+    private float wallJumpingTime = 0.2f;
+    private float wallJumpingCounter;
+    private float wallJumpingDuratiion=0.4f;
+    private Vector2 wallJumpingPower = new Vector2(8f, 16f);
+    private void wallJump()
+    {
+        if (isWallSliding)
+        {
+            isWallJumping = false;
+            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingCounter = wallJumpingTime;
+
+            CancelInvoke(nameof(stopWallJumping));
+        }
+        else
+        {
+            wallJumpingCounter =0;
+        }
+        if(Input.GetButtonDown("Jump")&& wallJumpingCounter > 0f)
+        {
+            isWallJumping = true;
+            rigi.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+            /*if (transform.localScale.x != wallJumpingDirection)
+            {
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+            }*/
+            Invoke(nameof(stopWallJumping), wallJumpingDuratiion);
+        }
+    }
+
+    /*private bool WasWalled;
+    private void wasWalled()
+    {
+        if (isWalled())
+        {
+            WasWalled = true;
+        }
+        if (isGrounded())
+        {
+            WasWalled = false;
+        }
+    }
+    private void canDoubleJump()
+    {
+        if (WasWalled)
+        {
+            extraJump = 0;
+        }
+        else
+        {
+            extraJump = 2;
+        }
+    }*/
+
+    private void stopWallJumping()
+    {
+        isWallJumping = false;
+    }
+
+    //Code for flipping the player
+    private bool isFacingRight = false;
+    private void fliping()
+    {
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+    private void flip()
+    {
+        if(isFacingRight && horizontalMove < 0)
+        {
+            isFacingRight = false;
+            fliping();            
+        }
+        if (!isFacingRight && horizontalMove > 0)
+        {
+            isFacingRight = true;
+            fliping();
+        }
+    }
     
 
 }
