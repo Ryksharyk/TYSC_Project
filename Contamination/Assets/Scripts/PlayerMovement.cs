@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         jump();
         crouch();
         wallJump();
-
+        flash();
         if (!isWallJumping)
         {
             flip();
@@ -68,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump") && isGrounded() && extraJump == 1)
             {
                 rigi.velocity = new Vector2(rigi.velocity.x, jumpPower);
-
             }
             if (Input.GetButtonUp("Jump") && rigi.velocity.y > 0f)
             {
@@ -158,7 +158,6 @@ public class PlayerMovement : MonoBehaviour
     //Code for Walljumping
     private bool isWallJumping;
     private float wallJumpingDirection;
-    private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
     private float wallJumpingDuratiion = 0.4f;
     private Vector2 wallJumpingPower = new Vector2(32f, 16f);
@@ -168,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isWallJumping = false;
             wallJumpingDirection = -transform.localScale.x;
-            wallJumpingCounter = wallJumpingTime;
+            wallJumpingCounter = 1;
 
             CancelInvoke(nameof(stopWallJumping));
         }
@@ -239,6 +238,17 @@ public class PlayerMovement : MonoBehaviour
             isFacingRight = true;
             fliping();
         }
+    }
+
+    [SerializeField] private Light2D flashlight;
+    private void flash()
+    {
+        if (Input.GetButtonDown("Flash"))
+        {
+            flashlight.enabled =!flashlight.enabled;
+        }
+        
+
     }
 
 
