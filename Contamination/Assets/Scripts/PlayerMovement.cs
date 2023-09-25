@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         jump();
         crouch();
-        wallJump();
+        //wallJump();
         flash();
         if (!isWallJumping)
         {
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rigi.velocity = new Vector2(horizontalMove * runSpeed, rigi.velocity.y);
         }
-        wallSlide();
+        //wallSlide();
     }
 
 
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     //Code for Jumping.
     public float jumpPower = 20f;
     private bool jumping = true;
-    private float extraJump = 1f;
+    private float extraJump = 1;
     private void jump()
     {
         if (jumping)
