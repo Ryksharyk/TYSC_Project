@@ -247,8 +247,6 @@ public class PlayerMovement : MonoBehaviour
         {
             flashlight.enabled =!flashlight.enabled;
         }
-        
-
     }
 
 

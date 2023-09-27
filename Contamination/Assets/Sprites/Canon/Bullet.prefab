@@ -126,9 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbd4a990d28806428946c2ba9f6f02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killplayer: {fileID: 0}
   rb: {fileID: 2995336376482174939}
-  Force: 30
+  Force: 40
 --- !u!61 &-783307724586160504
 BoxCollider2D:
   m_ObjectHideFlags: 0
