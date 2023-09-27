@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class PlayerMovementDemo : MonoBehaviour
@@ -19,6 +20,7 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
+        flash();
 
     }
     //
@@ -269,5 +271,14 @@ public class PlayerMovementDemo : MonoBehaviour
     {
         Debug.Log("Stopped Wall Jump");
         isWallJumping = false;
+    }
+
+    [SerializeField] private Light2D flashlight;
+    private void flash()
+    {
+        if (Input.GetButtonDown("Flash"))
+        {
+            flashlight.enabled = !flashlight.enabled;
+        }
     }
 }
