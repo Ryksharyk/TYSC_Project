@@ -19,11 +19,6 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
-<<<<<<< Updated upstream
-=======
-        flash();
-        Animation();
->>>>>>> Stashed changes
 
     }
     //
@@ -232,9 +227,7 @@ public class PlayerMovementDemo : MonoBehaviour
     //
     //Code for Walljumping
     private bool isWallJumping;
-    public float wallJumpPowerX;
-    public float wallJumpPowerY;
-    private Vector2 wallJumpingPower;
+    private Vector2 wallJumpingPower = new Vector2(-50f, 20f);
     private float wallJumpingDirection;
     private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
@@ -257,7 +250,6 @@ public class PlayerMovementDemo : MonoBehaviour
         if (Input.GetButtonDown("Jump") && wallJumpingCounter>0f)   
         {
             isWallJumping = true;
-            Vector2 wallJumpingPower = new Vector2(wallJumpPowerX, wallJumpPowerY);
             rigi.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
@@ -278,24 +270,4 @@ public class PlayerMovementDemo : MonoBehaviour
         Debug.Log("Stopped Wall Jump");
         isWallJumping = false;
     }
-<<<<<<< Updated upstream
-=======
-
-    [SerializeField] private Light2D flashlight;
-    private void flash()
-    {
-        if (Input.GetButtonDown("Flash"))
-        {
-            flashlight.enabled = !flashlight.enabled;
-        }
-    }
-
-
-
-    public Animator animator;
-    private void Animation()
-    {
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-    }
->>>>>>> Stashed changes
 }
