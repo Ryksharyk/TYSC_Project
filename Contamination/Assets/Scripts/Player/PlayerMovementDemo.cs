@@ -20,10 +20,7 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
-<<<<<<< Updated upstream
         flash();
-=======
->>>>>>> Stashed changes
 
     }
     //
@@ -275,7 +272,6 @@ public class PlayerMovementDemo : MonoBehaviour
         Debug.Log("Stopped Wall Jump");
         isWallJumping = false;
     }
-<<<<<<< Updated upstream
 
     [SerializeField] private Light2D flashlight;
     private void flash()
@@ -285,6 +281,4 @@ public class PlayerMovementDemo : MonoBehaviour
             flashlight.enabled = !flashlight.enabled;
         }
     }
-=======
->>>>>>> Stashed changes
 }
