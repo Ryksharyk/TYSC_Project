@@ -20,10 +20,13 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         flash();
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of fa44a17 (Bhai ye pata nhi kya ho raha hai)
 
     }
     //
@@ -275,6 +278,7 @@ public class PlayerMovementDemo : MonoBehaviour
         Debug.Log("Stopped Wall Jump");
         isWallJumping = false;
     }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
     [SerializeField] private Light2D flashlight;
@@ -287,4 +291,6 @@ public class PlayerMovementDemo : MonoBehaviour
     }
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of fa44a17 (Bhai ye pata nhi kya ho raha hai)
 }
