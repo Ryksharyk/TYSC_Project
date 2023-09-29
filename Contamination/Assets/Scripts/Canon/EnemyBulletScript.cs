@@ -41,7 +41,9 @@ public class EnemyBulletScript : MonoBehaviour
             if (other.gameObject.CompareTag("Obstacle"))
             {
                 killplayer.Respawn();
-            }    
+            }
+            
+            
         }
         
 
