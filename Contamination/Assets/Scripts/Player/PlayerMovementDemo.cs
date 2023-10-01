@@ -20,10 +20,15 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
+<<<<<<< Updated upstream
 
         flash();
         Animation();
 
+=======
+        flash();
+        Animation();
+>>>>>>> Stashed changes
 
     }
     //
