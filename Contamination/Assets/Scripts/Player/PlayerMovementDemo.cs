@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class PlayerMovementDemo : MonoBehaviour
@@ -19,11 +20,10 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
-<<<<<<< Updated upstream
-=======
+
         flash();
         Animation();
->>>>>>> Stashed changes
+
 
     }
     //
@@ -278,8 +278,7 @@ public class PlayerMovementDemo : MonoBehaviour
         Debug.Log("Stopped Wall Jump");
         isWallJumping = false;
     }
-<<<<<<< Updated upstream
-=======
+
 
     [SerializeField] private Light2D flashlight;
     private void flash()
@@ -297,5 +296,5 @@ public class PlayerMovementDemo : MonoBehaviour
     {
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
     }
->>>>>>> Stashed changes
+
 }
