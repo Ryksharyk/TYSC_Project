@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8829011592481458890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6732722475937993059}
   - component: {fileID: 304139258282879512}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,8 @@ GameObject:
   - component: {fileID: 2717626004881347895}
   - component: {fileID: 2727251996178466823}
   - component: {fileID: 4577366654263705810}
-  m_Layer: 0
+  - component: {fileID: 8298630814278752722}
+  m_Layer: 3
   m_Name: Player_Prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -144,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 3257017865631963365}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: -3.3, z: 0}
+  m_LocalPosition: {x: -31.7, y: 42.46344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -354,17 +355,30 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 192
-  jumpPower: 30
+  jumpPower: 20
   ceilingCheck: {fileID: 2047122082935775341}
   crouchDisableCollider: {fileID: 4066193895517342088}
   wallCheck: {fileID: 8829011592481458890}
   wallLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   wallJumpPowerX: -20
   wallJumpPowerY: 30
   flashlight: {fileID: 304139258282879512}
   animator: {fileID: 3715358975736036414}
+--- !u!114 &8298630814278752722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257017865631963365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123800e92812a64428c169ceb035b77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBuildIndex: 0
 --- !u!1 &3893210564307018198
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2183597752176372829}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2047122082935775341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CielingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
