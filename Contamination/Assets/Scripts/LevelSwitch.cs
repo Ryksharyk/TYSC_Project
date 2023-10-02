@@ -11,7 +11,7 @@ public class LevelSwitch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print("Trigger Entered");
+            
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
     }

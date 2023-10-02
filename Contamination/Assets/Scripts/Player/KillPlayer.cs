@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class KillPlayer : MonoBehaviour
 {
     Vector2 startPosition;
+    public int sceneBuildIndex;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class KillPlayer : MonoBehaviour
     }
     public void Respawn()
     {
-        transform.position = startPosition;
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
     }
 }
 

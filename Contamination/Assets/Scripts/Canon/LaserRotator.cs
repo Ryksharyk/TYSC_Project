@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
-public class CanonType2 : MonoBehaviour
+public class LaserRotator : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform bulletPos;
     private GameObject player;
     private float timer;
-
-
+    CanonType1 CanonType1;
 
     private void Start()
     {
@@ -26,62 +23,14 @@ public class CanonType2 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        RotateObject();
+        
         rotate();
     }
-    void shoot()
-    {
-        Instantiate(bullet, bulletPos.position, Quaternion.identity);
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            triggered = true;
-            RotateObject();
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (distance < 30)
-            {
-                triggered = true;
-                RotateObject();
-                if (timer > 0.5)
-                {
-                    timer = 0;
-                    shoot();
-                }
-            }
-        }
 
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            triggered = false;
-        }
-    }
-
-    
     public float rotationSpeed;
-    private float SpeedofRotation;
     private bool triggered = false;
-    void RotateObject()
-    {
-        if (triggered)
-        {
-
-            Vector3 direction = player.transform.position - transform.position;
-
-            float rot = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, rot + 180);
-        }
-    }
+    
 
     private Vector3 rangeAngle;
     public float Angle1;
@@ -90,7 +39,6 @@ public class CanonType2 : MonoBehaviour
     void rotate()
     {
         rangeAngle = transform.eulerAngles;
-        
         if (rangeAngle.z > Angle1 + 1 && rangeAngle.z < Angle2 - 1)
         {
             inrange = false;
@@ -120,14 +68,13 @@ public class CanonType2 : MonoBehaviour
         }
     }
 
-    [SerializeField] Collider2D laserCollider;
-    [SerializeField] Light2D laserLight;
     private float turnOff;
     private float turnOn;
     public float OnFor;
     public float OffFor;
     private bool lightOn = true;
-
+    [SerializeField] Collider2D laserCollider;
+    [SerializeField] Light2D laserLight;
     void laserOff()
     {
         turnOff += Time.deltaTime;

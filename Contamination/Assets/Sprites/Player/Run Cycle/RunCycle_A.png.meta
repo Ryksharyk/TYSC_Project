@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RunCycle_A_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 55
+        width: 519
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f129b8869afacfc488460006254b772c
+      internalID: -2023227168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_1
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 59
+        width: 405
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4987a761772dcc84da396b0ba7c39e10
+      internalID: 1175181640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_2
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 59
+        width: 311
+        height: 565
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46cda31f95f61574090f23a20b4a5a56
+      internalID: -1588764267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_3
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 59
+        width: 291
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33be9817e5dddc046b18f0b7f8db48bb
+      internalID: 1481297320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_4
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 55
+        width: 462
+        height: 636
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb335fe2acae3f34cb60fd43f249ef7e
+      internalID: 153753734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_5
+      rect:
+        serializedVersion: 2
+        x: 3115
+        y: 119
+        width: 565
+        height: 558
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bc3cc24ec00154cb0fdc5665a44873
+      internalID: -101659355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_6
+      rect:
+        serializedVersion: 2
+        x: 3730
+        y: 59
+        width: 563
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c40c96fde4df3e40b3a3a2b6347fcc7
+      internalID: -1632843930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_7
+      rect:
+        serializedVersion: 2
+        x: 4487
+        y: 55
+        width: 244
+        height: 572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6a6d555bd61f943b5586a9fe39026d
+      internalID: 1753571720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_8
+      rect:
+        serializedVersion: 2
+        x: 5076
+        y: 59
+        width: 321
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162193af6cc9b9b448313f5bd7134d13
+      internalID: 714868306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_9
+      rect:
+        serializedVersion: 2
+        x: 5588
+        y: 102
+        width: 542
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8e7d7a0f15f69468eb259a3c090534
+      internalID: 1082403431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunCycle_A_10
+      rect:
+        serializedVersion: 2
+        x: 6231
+        y: 62
+        width: 495
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984191aecd1fe4a4289a1117466be3de
+      internalID: -1541684657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +350,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RunCycle_A_0: -2023227168
+      RunCycle_A_1: 1175181640
+      RunCycle_A_10: -1541684657
+      RunCycle_A_2: -1588764267
+      RunCycle_A_3: 1481297320
+      RunCycle_A_4: 153753734
+      RunCycle_A_5: -101659355
+      RunCycle_A_6: -1632843930
+      RunCycle_A_7: 1753571720
+      RunCycle_A_8: 714868306
+      RunCycle_A_9: 1082403431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

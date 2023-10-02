@@ -27,17 +27,21 @@ using UnityEngine;
     private void FixedUpdate()
     {
         RotateObject();
-        rotate();    
+        rotate();
     }
-    void shoot()
+    public void shoot()
     {
         Instantiate(bullet, bulletPos.position, Quaternion.identity);
     }
+
+    [SerializeField] Collider2D laserCollider;
+    [SerializeField] Light2D laserLight;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            
             triggered = true;
             RotateObject();
         }
@@ -46,15 +50,12 @@ using UnityEngine;
     {
         if (collision.CompareTag("Player"))
         {
-            if (distance < 30)
+            triggered = true;
+            RotateObject();
+            if (timer > 0.5)
             {
-                triggered = true;
-                RotateObject();
-                if (timer > 0.5)
-                {
-                    timer = 0;
-                    shoot();
-                }
+                timer = 0;
+                shoot();
             }
         }
         
@@ -69,7 +70,7 @@ using UnityEngine;
 
     public float rotationSpeed;
     private bool triggered=false;
-    void RotateObject()
+    public void RotateObject()
     {
         if (triggered)
         {
@@ -77,7 +78,7 @@ using UnityEngine;
             Vector3 direction = player.transform.position - transform.position;
             
             float rot = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+            transform.rotation = Quaternion.Euler(0, 0, rot + 180);
         }
     }
 
@@ -122,8 +123,7 @@ using UnityEngine;
     public float OnFor;
     public float OffFor;
     private bool lightOn = true;
-    [SerializeField] Collider2D laserCollider;
-    [SerializeField] Light2D laserLight;
+    
     void laserOff()
     {
         turnOff += Time.deltaTime;
