@@ -20,15 +20,9 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
-<<<<<<< Updated upstream
 
         flash();
         Animation();
-
-=======
-        flash();
-        Animation();
->>>>>>> Stashed changes
 
     }
     //
@@ -113,6 +107,7 @@ public class PlayerMovementDemo : MonoBehaviour
     public float jumpPower = 8f;
     private bool jumping = true;
     private float extraJump = 1;
+    private float NotJumping;
     private void jump()
     {
         if (isGrounded())
@@ -120,16 +115,27 @@ public class PlayerMovementDemo : MonoBehaviour
             airControl = true;
             jumping = true;
             extraJump = 1;
+            animator.SetBool("InAir", false);
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsDoubleJumping", false);
+        }
+        else
+        {
+            animator.SetBool("InAir", true);
         }
         if (jumping)
         {
             if (Input.GetButtonDown("Jump") && isGrounded() && extraJump == 1)
             {
+                animator.SetBool("InAir", true);
+                animator.SetBool("IsJumping", true);
                 rigi.velocity = new Vector2(rigi.velocity.x, jumpPower);
             }
             
             if (Input.GetButtonDown("Jump") && !isGrounded() && extraJump > 0)
             {
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("IsDoubleJumping", true);
                 rigi.velocity = new Vector2(rigi.velocity.x, jumpPower);
                 extraJump = 0;
             }
@@ -153,6 +159,7 @@ public class PlayerMovementDemo : MonoBehaviour
     private bool crouching = false;
     private void isCrouching()
     {
+        
         // If the character has a ceiling preventing them from standing up, keep them crouching
         if (!crouching)
         {
@@ -176,7 +183,7 @@ public class PlayerMovementDemo : MonoBehaviour
         //Conitions if the player is not crouching
         else
         {
-            runSpeed = 10f;
+            runSpeed *= 2;
             jumping = true;
             if (crouchDisableCollider != null)
                 crouchDisableCollider.enabled = true;
@@ -187,11 +194,13 @@ public class PlayerMovementDemo : MonoBehaviour
     {
         if (Input.GetButtonDown("Crouch") && isGrounded())
         {
+            animator.SetBool("IsSneaking", true);
             crouching = true;
             isCrouching();
         }
         if (Input.GetButtonUp("Crouch"))
         {
+            animator.SetBool("IsSneaking", false);
             crouching = false;
             isCrouching();
         }
@@ -217,6 +226,7 @@ public class PlayerMovementDemo : MonoBehaviour
     {
         if (isWalled())
         {
+            animator.SetBool("IsWalled", true);
             rigi.velocity = new Vector2(rigi.velocity.x, Mathf.Clamp(rigi.velocity.y, -wallSlidingSpeed, float.MaxValue));
             if (rigi.velocity.y < 0)
             {
@@ -225,6 +235,7 @@ public class PlayerMovementDemo : MonoBehaviour
         }
         else
         {
+            animator.SetBool("IsWalled", false);
             isWallSliding = false;
         }
         
@@ -261,6 +272,7 @@ public class PlayerMovementDemo : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && wallJumpingCounter>0f)   
         {
+            
             isWallJumping = true;
             Vector2 wallJumpingPower = new Vector2(wallJumpPowerX, wallJumpPowerY);
             rigi.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);

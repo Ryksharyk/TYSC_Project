@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3361f25f43511d64b993b0599b2af498
+guid: d976db931d034954d89279d484145438
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DoubleJump1
+      name: Wall_Jump_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 11
-        width: 320
-        height: 639
+        x: 75
+        y: 126
+        width: 335
+        height: 681
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 747ddde5576daf54d8b0ad8038e2bd96
-      internalID: -887948964
+      spriteID: 5878bafe7a639284ea9083f3cf95d642
+      internalID: -969064452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump2
+      name: Wall_Jump_2
       rect:
         serializedVersion: 2
-        x: 633
-        y: 12
-        width: 327
-        height: 635
+        x: 526
+        y: 126
+        width: 332
+        height: 675
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,19 +145,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 565a09a6ca31f8d45a17bb3c15b55a21
-      internalID: -389602483
+      spriteID: ec0395af36e76c7458ade858bbf1351e
+      internalID: -1867430465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump3
+      name: Wall_Jump_3
       rect:
         serializedVersion: 2
-        x: 1214
-        y: 12
-        width: 355
+        x: 1008
+        y: 126
+        width: 325
+        height: 673
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375750c0db2578e45b77c9200d89adb0
+      internalID: 240487995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 126
+        width: 318
+        height: 673
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133058a7692da7945a0b9feb8f169c35
+      internalID: 1730216506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 177
+        width: 354
         height: 622
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -166,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bca4641ec402e534c86b9aa787e2899c
-      internalID: -2123696041
+      spriteID: cbe25f286e90f55439f700b6122d008f
+      internalID: -2089748836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump4
+      name: Wall_Jump_6
       rect:
         serializedVersion: 2
-        x: 1740
-        y: 12
-        width: 356
-        height: 640
+        x: 2359
+        y: 221
+        width: 319
+        height: 501
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb374ae98ad5d5f4182ea75995570fb3
-      internalID: 748434706
+      spriteID: 009b5d212f9e25e44aaab63d14d4d12a
+      internalID: 137567063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump5
+      name: Wall_Jump_7
       rect:
         serializedVersion: 2
-        x: 2272
-        y: 14
-        width: 341
-        height: 623
+        x: 2776
+        y: 195
+        width: 329
+        height: 543
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4564e7eb7a8c6c5468fbe8c3fc822552
-      internalID: 1071131586
+      spriteID: 38bcd0e521754f9489a9117150001383
+      internalID: 146584336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump6
+      name: Wall_Jump_8
       rect:
         serializedVersion: 2
-        x: 2822
-        y: 11
-        width: 354
-        height: 631
+        x: 3223
+        y: 168
+        width: 300
+        height: 572
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e98a7126daf2c57449178519a8814a7e
-      internalID: 1436509045
+      spriteID: f151c3df762411c469979dc1f3ce32b6
+      internalID: 607493109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump7
+      name: Wall_Jump_9
       rect:
         serializedVersion: 2
-        x: 3375
-        y: 14
-        width: 341
-        height: 620
+        x: 3639
+        y: 154
+        width: 325
+        height: 595
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0ed39134abedc645b0938793108d5c7
-      internalID: -1042856321
+      spriteID: 7db9771c42b84a545a82340ab9f397f5
+      internalID: 144231541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoubleJump8
+      name: Wall_Jump_10
       rect:
         serializedVersion: 2
-        x: 3880
-        y: 19
-        width: 410
-        height: 630
+        x: 4077
+        y: 161
+        width: 380
+        height: 582
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,29 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37760313526da6b4b89a2a7d7fd2d2ce
-      internalID: 1806343994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoubleJump9
-      rect:
-        serializedVersion: 2
-        x: 4401
-        y: 22
-        width: 391
-        height: 602
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14818beb9a45dd3428b0ddc66361ef3b
-      internalID: -633862488
+      spriteID: ebc547ac611be904b8e3175c2f43768f
+      internalID: -1755846835
       vertices: []
       indices: 
       edges: []
@@ -309,32 +330,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DoubleJump1: -887948964
-      DoubleJump2: -389602483
-      DoubleJump3: -2123696041
-      DoubleJump4: 748434706
-      DoubleJump5: 1071131586
-      DoubleJump6: 1436509045
-      DoubleJump7: -1042856321
-      DoubleJump8: 1806343994
-      DoubleJump9: -633862488
-      Double_Jump_11: -26235629
-      Double_Jump_12: -56794824
-      Double_Jump_13: -667535188
-      Double_Jump_14: 420005396
-      Double_Jump_15: -1368197238
-      Double_Jump_16: 1048862961
-      Double_Jump_17: -570945462
-      Double_Jump_18: -1705050186
-      Double_Jump_19: 1303065279
-      Double_Jump_20: -2122667661
-      Double_Jump_21: 1524475366
-      Double_Jump_22: 882543816
-      Double_Jump_23: -2031209734
-      Double_Jump_24: -438860479
-      Double_Jump_25: -1672943022
-      Double_Jump_8: 946976181
-      Double_Jump_9: 628020427
+      20231002_113311_5: -976983271
+      20231002_113311_6: -1904657890
+      Wall_Jump_1: -969064452
+      Wall_Jump_10: -1755846835
+      Wall_Jump_2: -1867430465
+      Wall_Jump_3: 240487995
+      Wall_Jump_4: 1730216506
+      Wall_Jump_5: -2089748836
+      Wall_Jump_6: 137567063
+      Wall_Jump_7: 146584336
+      Wall_Jump_8: 607493109
+      Wall_Jump_9: 144231541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
