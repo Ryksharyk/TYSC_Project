@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Range
+  - Cracked Wall
+  - Hydraulic
   layers:
   - Default
   - TransparentFX

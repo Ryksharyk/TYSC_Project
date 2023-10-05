@@ -1,5 +1,8 @@
+// Player Movement Script 
+
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class PlayerMovementDemo : MonoBehaviour
@@ -19,6 +22,9 @@ public class PlayerMovementDemo : MonoBehaviour
         crouch(); //from line 117
         wallSlide();
         wallJump();
+
+        flash();
+        Animation();
 
     }
     //
@@ -103,6 +109,7 @@ public class PlayerMovementDemo : MonoBehaviour
     public float jumpPower = 8f;
     private bool jumping = true;
     private float extraJump = 1;
+    private float NotJumping;
     private void jump()
     {
         if (isGrounded())
@@ -110,16 +117,27 @@ public class PlayerMovementDemo : MonoBehaviour
             airControl = true;
             jumping = true;
             extraJump = 1;
+            animator.SetBool("InAir", false);
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsDoubleJumping", false);
+        }
+        else
+        {
+            animator.SetBool("InAir", true);
         }
         if (jumping)
         {
             if (Input.GetButtonDown("Jump") && isGrounded() && extraJump == 1)
             {
+                animator.SetBool("InAir", true);
+                animator.SetBool("IsJumping", true);
                 rigi.velocity = new Vector2(rigi.velocity.x, jumpPower);
             }
             
             if (Input.GetButtonDown("Jump") && !isGrounded() && extraJump > 0)
             {
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("IsDoubleJumping", true);
                 rigi.velocity = new Vector2(rigi.velocity.x, jumpPower);
                 extraJump = 0;
             }
@@ -143,6 +161,7 @@ public class PlayerMovementDemo : MonoBehaviour
     private bool crouching = false;
     private void isCrouching()
     {
+        
         // If the character has a ceiling preventing them from standing up, keep them crouching
         if (!crouching)
         {
@@ -166,7 +185,7 @@ public class PlayerMovementDemo : MonoBehaviour
         //Conitions if the player is not crouching
         else
         {
-            runSpeed = 10f;
+            runSpeed *= 2;
             jumping = true;
             if (crouchDisableCollider != null)
                 crouchDisableCollider.enabled = true;
@@ -177,11 +196,13 @@ public class PlayerMovementDemo : MonoBehaviour
     {
         if (Input.GetButtonDown("Crouch") && isGrounded())
         {
+            animator.SetBool("IsSneaking", true);
             crouching = true;
             isCrouching();
         }
         if (Input.GetButtonUp("Crouch"))
         {
+            animator.SetBool("IsSneaking", false);
             crouching = false;
             isCrouching();
         }
@@ -207,6 +228,7 @@ public class PlayerMovementDemo : MonoBehaviour
     {
         if (isWalled())
         {
+            animator.SetBool("IsWalled", true);
             rigi.velocity = new Vector2(rigi.velocity.x, Mathf.Clamp(rigi.velocity.y, -wallSlidingSpeed, float.MaxValue));
             if (rigi.velocity.y < 0)
             {
@@ -215,6 +237,7 @@ public class PlayerMovementDemo : MonoBehaviour
         }
         else
         {
+            animator.SetBool("IsWalled", false);
             isWallSliding = false;
         }
         
@@ -227,7 +250,9 @@ public class PlayerMovementDemo : MonoBehaviour
     //
     //Code for Walljumping
     private bool isWallJumping;
-    private Vector2 wallJumpingPower = new Vector2(-50f, 20f);
+    public float wallJumpPowerX;
+    public float wallJumpPowerY;
+    private Vector2 wallJumpingPower;
     private float wallJumpingDirection;
     private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
@@ -249,7 +274,9 @@ public class PlayerMovementDemo : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && wallJumpingCounter>0f)   
         {
+            
             isWallJumping = true;
+            Vector2 wallJumpingPower = new Vector2(wallJumpPowerX, wallJumpPowerY);
             rigi.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
@@ -270,4 +297,23 @@ public class PlayerMovementDemo : MonoBehaviour
         Debug.Log("Stopped Wall Jump");
         isWallJumping = false;
     }
+
+
+    [SerializeField] private Light2D flashlight;
+    private void flash()
+    {
+        if (Input.GetButtonDown("Flash"))
+        {
+            flashlight.enabled = !flashlight.enabled;
+        }
+    }
+
+
+
+    public Animator animator;
+    private void Animation()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+    }
+
 }
